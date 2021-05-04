@@ -21,10 +21,11 @@ jobs:
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2
         with:
-          github_token: ${{secrets.GIT_TOKEN}}
+          github_token: ${{ secrets.GIT_TOKEN }}
           workflow: terrafrom.yml
-          workflow_conclusion: success
+          branch: master
           name: terraform
+          path: terraform.log
 
       - id: host
         env:
