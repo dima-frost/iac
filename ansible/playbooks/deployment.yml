@@ -7,4 +7,4 @@
         repo: 'https://github.com/dima-frost/pyapp.git'
         dest: ~/pyapp
     - name: Run `docker-compose up`
-      command: docker-compose --file ./pyapp/docker-compose.yaml up -d
+      command: pwd && ls -la && docker-compose up -d
