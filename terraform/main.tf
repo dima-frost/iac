@@ -32,5 +32,5 @@ resource "aws_security_group_rule" "ssh-pyapp" {
   to_port           = 8080
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_instance.final-project.vpc_security_group_ids
+  security_group_id = aws_instance.final-project.security_groups
 }
