@@ -1,0 +1,10 @@
+---
+- hosts: [all]
+  become: true
+  tasks:
+    - name: Clone repo with docker-compose file
+      git:
+        repo: 'https://github.com/dima-frost/pyapp.git'
+        dest: ~/pyapp
+    - name: Run `docker-compose up`
+      command: docker-compose --file ./pyapp/docker-compose.yaml up -d
