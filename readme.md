@@ -6,10 +6,10 @@
 
 ### Contains:
  -	GitHub Actions
- -	Terrafrom
+ -	Terraform
  -  AWS
  -	Ansible
  -	Bash
  -	Docker
 
-***Dmitriy Moroz***  **2021**
+***Dmitriy Moroz***  ***2021***
