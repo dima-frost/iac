@@ -4,5 +4,5 @@
   tasks:
     - name: Clone repo with docker-compose file
       command: git clone https://github.com/dima-frost/pyapp.git
-    - name: Run `docker-compose up`
+    - name: Run "docker-compose up"
       command: docker-compose --file ./pyapp/docker-compose.yaml up -d
