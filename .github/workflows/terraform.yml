@@ -37,23 +37,23 @@ jobs:
         run: terraform plan -no-color
         continue-on-error: true
 
-      - name: Terraform Plan Status
-          working-directory: 'terraform'
-          if: steps.plan.outcome == 'failure'
-          run: exit 1
+    - name: Terraform Plan Status
+        working-directory: 'terraform'
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
 
-      - name: Terraform Apply
-          working-directory: 'terraform'
-          if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-          run: terraform apply -auto-approve
+    - name: Terraform Apply
+        working-directory: 'terraform'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve
 
-      - name: Terraform Output
-          working-directory: 'terraform'
-          id: output
-          run: terraform output > ../terraform.log
+    - name: Terraform Output
+        working-directory: 'terraform'
+        id: output
+        run: terraform output > ../terraform.log
 
-      - name: Upload actifacts
-          uses: actions/upload-artifact@v2
-          with:
-            name: terraform
-            path: terraform.log
+    - name: Upload actifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: terraform
+          path: terraform.log
